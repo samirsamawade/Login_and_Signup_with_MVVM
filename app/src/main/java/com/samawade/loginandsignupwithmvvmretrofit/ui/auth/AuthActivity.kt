@@ -1,4 +1,4 @@
-package com.samawade.loginandsignupwithmvvmretrofit.auth
+package com.samawade.loginandsignupwithmvvmretrofit.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

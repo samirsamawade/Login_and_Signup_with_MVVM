@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginAndSignupWithMVVMRetrofit">
         <activity
-            android:name=".auth.AuthActivity"
+            android:name="com.samawade.loginandsignupwithmvvmretrofit.ui.auth.AuthActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

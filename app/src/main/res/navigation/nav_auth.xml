@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.samawade.loginandsignupwithmvvmretrofit.auth.LoginFragment"
+        android:name="com.samawade.loginandsignupwithmvvmretrofit.ui.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.samawade.loginandsignupwithmvvmretrofit.auth.RegisterFragment"
+        android:name="com.samawade.loginandsignupwithmvvmretrofit.ui.auth.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
 </navigation>

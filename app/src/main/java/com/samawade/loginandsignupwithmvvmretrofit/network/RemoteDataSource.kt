@@ -3,7 +3,7 @@ package com.samawade.loginandsignupwithmvvmretrofit.network
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RemoteApiServices {
+class RemoteDataSource {
     companion object{
         private const val BASE_URL = "https://simplifiedcoding.tech/mywebapp/public/api/"
     }
