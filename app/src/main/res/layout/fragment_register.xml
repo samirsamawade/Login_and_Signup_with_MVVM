@@ -36,7 +36,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/r_edit_name"
+                    android:id="@+id/editTextTextPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="name"
@@ -45,25 +45,6 @@
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/r_phone_layout"
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                app:endIconMode="clear_text"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/r_edit_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="phone"
-                    android:inputType="number"
-                    android:textColorHint="#858585"
-                    android:textSize="16sp" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/r_username_layout"
@@ -76,11 +57,11 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/r_edit_username"
+                    android:id="@+id/editTextTextEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="username"
-                    android:inputType="textPersonName"
+                    android:inputType="textEmailAddress"
                     android:textColorHint="#858585"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -96,7 +77,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/r_edit_password"
+                    android:id="@+id/editTextTextPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="password"
