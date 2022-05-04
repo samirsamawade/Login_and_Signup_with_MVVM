@@ -1,6 +1,6 @@
-package com.samawade.loginandsignupwithmvvmretrofit.repository
+package com.samawade.loginandsignupwithmvvmretrofit.data.repository
 
-import com.samawade.loginandsignupwithmvvmretrofit.network.AuthApi
+import com.samawade.loginandsignupwithmvvmretrofit.data.network.AuthApi
 
 class AuthRepository(
     private val api: AuthApi

@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.samawade.loginandsignupwithmvvmretrofit.network.Resource
-import com.samawade.loginandsignupwithmvvmretrofit.repository.AuthRepository
-import com.samawade.loginandsignupwithmvvmretrofit.responses.LoginResponse
+import com.samawade.loginandsignupwithmvvmretrofit.data.network.Resource
+import com.samawade.loginandsignupwithmvvmretrofit.data.repository.AuthRepository
+import com.samawade.loginandsignupwithmvvmretrofit.data.responses.LoginResponse
 import kotlinx.coroutines.launch
 
 class AuthViewModel(

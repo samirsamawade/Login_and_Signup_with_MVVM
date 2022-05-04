@@ -1,4 +1,4 @@
-package com.samawade.loginandsignupwithmvvmretrofit.responses
+package com.samawade.loginandsignupwithmvvmretrofit.data.responses
 
 data class User(
     val access_token: String?,

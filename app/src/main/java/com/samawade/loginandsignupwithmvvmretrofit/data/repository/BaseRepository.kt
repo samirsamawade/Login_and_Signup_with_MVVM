@@ -1,6 +1,6 @@
-package com.samawade.loginandsignupwithmvvmretrofit.repository
+package com.samawade.loginandsignupwithmvvmretrofit.data.repository
 
-import com.samawade.loginandsignupwithmvvmretrofit.network.Resource
+import com.samawade.loginandsignupwithmvvmretrofit.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

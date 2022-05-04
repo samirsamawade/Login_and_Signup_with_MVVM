@@ -1,6 +1,6 @@
-package com.samawade.loginandsignupwithmvvmretrofit.network
+package com.samawade.loginandsignupwithmvvmretrofit.data.network
 
-import com.samawade.loginandsignupwithmvvmretrofit.responses.LoginResponse
+import com.samawade.loginandsignupwithmvvmretrofit.data.responses.LoginResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST

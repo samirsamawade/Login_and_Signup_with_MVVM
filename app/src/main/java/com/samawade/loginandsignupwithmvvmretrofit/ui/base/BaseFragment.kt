@@ -8,10 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
-import com.samawade.loginandsignupwithmvvmretrofit.network.RemoteDataSource
-import com.samawade.loginandsignupwithmvvmretrofit.repository.BaseRepository
+import com.samawade.loginandsignupwithmvvmretrofit.data.UserPreferences
+import com.samawade.loginandsignupwithmvvmretrofit.data.network.RemoteDataSource
+import com.samawade.loginandsignupwithmvvmretrofit.data.repository.BaseRepository
 
 abstract class BaseFragment<VM: ViewModel, B: ViewBinding, R: BaseRepository>: Fragment() {
+
+    protected lateinit var userPreferences: UserPreferences
     protected lateinit var binding: B
     protected lateinit var viewModel: VM
     protected val remoteDataSource = RemoteDataSource()
@@ -21,6 +24,7 @@ abstract class BaseFragment<VM: ViewModel, B: ViewBinding, R: BaseRepository>: F
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        userPreferences = UserPreferences(requireContext())
         binding = getFragmentBinding(inflater, container)
         val factory = ViewModelFactory(getFragmentRepository())
         viewModel = ViewModelProvider(this, factory).get(getViewModel())

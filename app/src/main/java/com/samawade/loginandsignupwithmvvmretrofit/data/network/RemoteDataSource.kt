@@ -1,4 +1,4 @@
-package com.samawade.loginandsignupwithmvvmretrofit.network
+package com.samawade.loginandsignupwithmvvmretrofit.data.network
 
 import androidx.viewbinding.BuildConfig
 import okhttp3.OkHttpClient

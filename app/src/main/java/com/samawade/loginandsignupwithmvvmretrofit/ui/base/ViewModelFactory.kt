@@ -2,8 +2,8 @@ package com.samawade.loginandsignupwithmvvmretrofit.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.samawade.loginandsignupwithmvvmretrofit.repository.AuthRepository
-import com.samawade.loginandsignupwithmvvmretrofit.repository.BaseRepository
+import com.samawade.loginandsignupwithmvvmretrofit.data.repository.AuthRepository
+import com.samawade.loginandsignupwithmvvmretrofit.data.repository.BaseRepository
 import com.samawade.loginandsignupwithmvvmretrofit.ui.auth.AuthViewModel
 
 class ViewModelFactory(
