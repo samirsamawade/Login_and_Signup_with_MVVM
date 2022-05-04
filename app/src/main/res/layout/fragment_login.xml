@@ -65,11 +65,10 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <ProgressBar
-                android:id="@+id/loginProgressBar"
+                android:id="@+id/progressBar"
                 style="?attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"
                 android:background="@android:color/transparent"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"

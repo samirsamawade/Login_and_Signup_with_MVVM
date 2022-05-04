@@ -8,6 +8,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.samawade.loginandsignupwithmvvmretrofit.data.UserPreferences
 import com.samawade.loginandsignupwithmvvmretrofit.ui.auth.AuthActivity
+import com.samawade.loginandsignupwithmvvmretrofit.ui.home.HomeActivity
+import com.samawade.loginandsignupwithmvvmretrofit.ui.startNewActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         val userPreferences = UserPreferences(this)
 
         userPreferences.authToken.asLiveData().observe(this, Observer {
-            Toast.makeText(this, it ?: "Token is null", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, AuthActivity::class.java))
+            val activity = if (it == null) AuthActivity::class.java else HomeActivity::class.java
+            startNewActivity(activity)
         })
     }
 }
