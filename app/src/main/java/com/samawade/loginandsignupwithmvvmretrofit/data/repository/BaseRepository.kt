@@ -1,6 +1,7 @@
 package com.samawade.loginandsignupwithmvvmretrofit.data.repository
 
 import com.samawade.loginandsignupwithmvvmretrofit.data.network.Resource
+import com.samawade.loginandsignupwithmvvmretrofit.data.network.UserApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -23,5 +24,9 @@ abstract class BaseRepository {
                 }
             }
         }
+    }
+
+    suspend fun logout(api: UserApi) = safeApiCall {
+        api.logout()
     }
 }

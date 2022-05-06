@@ -7,11 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.samawade.loginandsignupwithmvvmretrofit.data.network.Resource
 import com.samawade.loginandsignupwithmvvmretrofit.data.repository.UserRepository
 import com.samawade.loginandsignupwithmvvmretrofit.data.responses.LoginResponse
+import com.samawade.loginandsignupwithmvvmretrofit.ui.base.BaseViewModel
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val repository: UserRepository
-): ViewModel() {
+): BaseViewModel(repository) {
 
     private val _user: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
     val user: LiveData<Resource<LoginResponse>>
