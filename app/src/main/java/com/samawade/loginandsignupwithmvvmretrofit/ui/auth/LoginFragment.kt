@@ -14,6 +14,7 @@ import com.samawade.loginandsignupwithmvvmretrofit.data.network.Resource
 import com.samawade.loginandsignupwithmvvmretrofit.data.repository.AuthRepository
 import com.samawade.loginandsignupwithmvvmretrofit.ui.base.BaseFragment
 import com.samawade.loginandsignupwithmvvmretrofit.ui.enable
+import com.samawade.loginandsignupwithmvvmretrofit.ui.handleApiError
 import com.samawade.loginandsignupwithmvvmretrofit.ui.home.HomeActivity
 import com.samawade.loginandsignupwithmvvmretrofit.ui.startNewActivity
 import com.samawade.loginandsignupwithmvvmretrofit.ui.visible
@@ -28,22 +29,20 @@ class LoginFragment : BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepo
         binding.buttonLogin.enable(false)
 
         viewModel.loginResponse.observe(viewLifecycleOwner, Observer {
-            binding.progressBar.visible(false)
-            when(it){
+            binding.progressBar.visible(it is Resource.Loading)
+            when (it) {
                 is Resource.Success -> {
-
+                    lifecycleScope.launch {
                         viewModel.saveAuthToken(it.value.user.access_token!!)
                         requireActivity().startNewActivity(HomeActivity::class.java)
+                    }
 
                 }
-                is Resource.Failure -> {
-                    Toast.makeText(requireContext(), "Login Failure", Toast.LENGTH_LONG).show()
-                    Log.d("TAG", it.toString())
-                }
+                is Resource.Failure -> handleApiError(it)
             }
         })
 
-        binding.editTextTextPassword.addTextChangedListener{
+        binding.editTextTextPassword.addTextChangedListener {
             val email = binding.editTextTextEmailAddress.text.toString().trim()
             binding.buttonLogin.enable(email.isNotEmpty() && it.toString().isNotEmpty())
         }
@@ -52,20 +51,19 @@ class LoginFragment : BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepo
             val email = binding.editTextTextEmailAddress.text.toString().trim()
             val password = binding.editTextTextPassword.text.toString().trim()
 
-            //add input validations
-            binding.progressBar.visible(true)
-            viewModel.login(email,password)
+            viewModel.login(email, password)
         }
     }
 
-    override fun getViewModel()= AuthViewModel::class.java
+    override fun getViewModel() = AuthViewModel::class.java
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    )= FragmentLoginBinding.inflate(inflater, container, false)
+    ) = FragmentLoginBinding.inflate(inflater, container, false)
 
-    override fun getFragmentRepository()= AuthRepository(remoteDataSource.buildApi(AuthApi::class.java), userPreferences)
+    override fun getFragmentRepository() =
+        AuthRepository(remoteDataSource.buildApi(AuthApi::class.java), userPreferences)
 
 
 }
